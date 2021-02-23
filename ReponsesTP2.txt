@@ -1,0 +1,50 @@
+Question 1 : Combien de temps faut-il pour atteindre le plafond en mettant 100 euros
+par an sur le livret A ?
+Au cours de la 133e année
+
+Question 2 : Combien de temps faut-il pour cumuler 1000 euros d’intérêts avec le
+Livret A une fois le plafond atteint ?
+Au cours de la 5e année
+
+Question 3 : Combien de temps faut-il pour cumuler 500 euros d’intérêts avec le
+LDD une fois le plafond atteint ?
+Au cours de la 9e année
+
+Question 4 : Quelle est la différence de montant sur le compte de la personne A et
+celui de la personne B ? (Compte A – Compte B)
+~23k - ~13k = 10k.
+La personne A possède environ 13 000€ en plus sur son épargne
+
+Question 5 : En commençant toujours à investir à 35 ans, combien aurait-il fallu que
+la personne B investisse par mois pour avoir autant que la personne A à l’âge de 65 ans?
+Environ 177€ par an.
+
+Question 6 : Quel est le prix global de la mensualité ?
+681.14€
+
+Question 7 : Quel est le montant de la cotisation mensuelle d’assurance ?
+Elle est dégréssive basée sur le restant à rembourser chez moi. Elle commence à 408.33€
+
+Question 8 : Quel est le montant total des intérêts remboursés ?
+29340.69€
+
+Question 9 : Quel est le montant total de l’assurance ?
+122.500€
+
+Question 10 : Quel montant du capital a été remboursé au bout de 10 ans ? 
+70000€
+
+Question 11 : Quel est le prix global de la mensualité ?
+1160.41€
+
+Question 12 : Quel est le montant de la cotisation mensuelle d’assurance ?
+Elle est dégréssive basée sur le restant à rembourser chez moi. Elle commence à 167.90€
+
+Question 13 : Quel est le montant total des intérêts remboursés ?
+8874.43€
+
+Question 14 : Quel est le montant total de l’assurance ?
+8000€
+
+Question 15 : Quel montant du capital a été remboursé au bout de 10 ans ? 
+133333.33€

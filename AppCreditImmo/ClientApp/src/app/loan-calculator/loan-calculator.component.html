@@ -1,0 +1,86 @@
+<section id="form-section">
+  <form id="form" [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend id="form-title">Loan Calculator</legend>
+
+      <label for="anneeDepart">Année de départ</label>
+      <input formControlName="anneeDepart" class="inputs form-control" inputmode="numeric" type="number" id="anneeDepart" placeholder="2021" [ngClass]="{'input-error': !anneeDepart.valid && anneeDepart.value, 'input-success': anneeDepart.valid}" />
+
+      <div *ngIf="anneeDepart.invalid && (anneeDepart.dirty || anneeDepart.touched)" class="error">
+        <p *ngIf="anneeDepart.errors.required">Année de départ invalide.</p>
+      </div>
+
+      <label for="montantBase">Montant emprunté</label>
+      <div class="input-group">
+        <input formControlName="montantBase" class="inputs form-control" inputmode="numeric" type="number" id="montantBase" placeholder="1000" [ngClass]="{'input-error': !montantBase.valid && montantBase.value, 'input-success': montantBase.valid}" />
+        <div class="input-group-append">
+          <span class="input-group-text">€</span>
+        </div>
+      </div>
+      <div *ngIf="montantBase.invalid && (montantBase.dirty || montantBase.touched)" class="error">
+        <p *ngIf="montantBase.errors.required">Montant invalide.</p>
+      </div>
+
+      <label for="dureeEmprunt">Durée de remboursement (an)</label>
+      <input formControlName="dureeEmprunt" class="inputs form-control" inputmode="numeric" type="number" id="dureeEmprunt" placeholder="10" [ngClass]="{'input-error': !dureeEmprunt.valid && dureeEmprunt.value, 'input-success': dureeEmprunt.valid}" />
+
+      <div *ngIf="dureeEmprunt.invalid && (dureeEmprunt.dirty || dureeEmprunt.touched)" class="error">
+        <p *ngIf="dureeEmprunt.errors.required">Durée invalide.</p>
+      </div>
+
+      <label for="tauxNominal">Taux nominal</label>
+      <input formControlName="tauxNominal" class="inputs form-control" inputmode="text" type="text" id="tauxNominal" placeholder="Bon taux" [ngClass]="{'input-error': !tauxNominal.valid && tauxNominal.value, 'input-success': tauxNominal.valid}" />
+
+      <div *ngIf="tauxNominal.invalid && (tauxNominal.dirty || tauxNominal.touched)" class="error">
+        <p *ngIf="tauxNominal.errors.required">Taux nominal invalide.</p>
+      </div>
+
+      <div id="radios">
+        <label for="sportif">Sportif</label>
+          <input formControlName="sportif" type="checkbox" class="form-control" id="sportif" value="Sportif">
+
+        <label for="fumeur">Fumeur</label>
+          <input formControlName="fumeur" type="checkbox" class="form-control" id="fumeur" value="Fumeur">
+
+        <label for="cardiaque">Troubles cardiaques</label>
+          <input formControlName="cardiaque" type="checkbox" class="form-control" id="cardiaque" value="Troubles cardiaques">
+
+        <label for="ingeInfo">Ingénieur informatique</label>
+          <input formControlName="ingeInfo" type="checkbox" class="form-control" id="ingeInfo" value="Ingénieur informatique">
+
+        <label for="pilote">Pilote de chasse</label>
+          <input formControlName="pilote" type="checkbox" class="form-control" id="pilote" value="Pilote de chasse">
+      </div>
+
+        <button type="submit" id="btn-submit" class="btn btn-primary btn-lg btn-block">Calculer</button>
+
+        <div *ngIf="calculatorForm.invalid" class="error">
+          <p *ngIf="calculatorForm.errors && checkout.errors.bug">Erreur lors du calcul.</p>
+        </div>
+
+        <button type="button" id="btn-autofill" class="btn btn-warning btn-lg btn-block" (click)="fillInputs()">Saisie automatique</button>
+    </fieldset>
+  </form>
+</section>
+
+<section id="container-tab" *ngIf="responseObs">
+  <table>
+    <tr class="turqBack">
+      <th>Mois</th>
+      <th>Taux d'assurance</th>
+      <th>Assurance</th>
+      <th>Coût du crédit jusque ici</th>
+      <th>Mensualite</th>
+      <th>Montant restant à rembourser</th>
+    </tr>
+    <tr *ngFor="let loan of responseObs | async; let i = index" [attr.data-index]="i">
+      <td>{{ i + 1 }} mois</td>
+      <td>{{ loan.assurance | number : '1.1-2' }} %</td>
+      <td>{{ loan.prixAssuranceMensuel | currency:'EUR' }}</td>
+      <td>{{ loan.cout | currency:'EUR' }}</td>
+      <td>{{ loan.mensualite | currency:'EUR' }}</td>
+      <td>{{ loan.montantRestantARembourser | currency:'EUR' }}</td>
+    </tr>
+  </table>
+</section>
+<br id="bottom" />
